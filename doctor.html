@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor Dashboard - Clinic Management System</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Doctor Dashboard</h1>
+    <button id="logout-btn">Logout</button>
+    <section id="patients-section">
+      <h2>Assigned Patients</h2>
+      <div id="patients-list"></div>
+    </section>
+    <section id="prescription-section" style="margin-top: 30px;">
+      <h2>Enter Prescription</h2>
+      <form id="prescription-form">
+        <label for="patient-select-prescription">Select Patient:</label>
+        <select id="patient-select-prescription" required>
+          <option value="">Select a patient</option>
+        </select>
+        <label for="prescription-text">Prescription:</label>
+        <textarea id="prescription-text" required></textarea>
+        <button type="submit" style="display: block; margin: 20px auto 0 auto;">Submit Prescription</button>
+      </form>
+      <p id="prescription-message" class="success-message"></p>
+    </section>
+  </div>
+</body>
+</html>

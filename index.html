@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clinic Management System - Login</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+  <script src="./firebase-config.js"></script>
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <div class="container"> 
+    <h1>Clinic Management System</h1>
+    <p class="tagline">Transforming care, one click at a time.</p>
+    <p class="tagline">"सेवा ही धर्म है"</p>
+    <div id="login-section">
+      <h2>Login</h2>
+      <form id="login-form">
+        <div class="form-row">
+          <label for="email">Email:</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="form-row">
+          <label for="password">Password:</label>
+          <input type="password" id="password" required />
+        </div>
+        <div class="login-buttons">
+          <button type="button" id="login-doctor-btn">Login as Doctor</button>
+          <button type="button" id="login-receptionist-btn">Login as Receptionist</button>
+        </div>
+      </form>
+      <p id="login-error" class="error-message"></p>
+
+      <div class="register-link-wrapper">
+        <p id="show-register-wrapper">Don't have an account? <a href="#" id="show-register">Register here</a></p>
+        <p id="show-login-wrapper" style="display:none;">Already have an account? <a href="#" id="show-login">Login here</a></p>
+      </div>
+
+      <form id="register-form" style="display:none;">
+        <div class="form-row">
+          <label for="register-email">Email:</label>
+          <input type="email" id="register-email" required />
+        </div>
+        <div class="form-row">
+          <label for="register-password">Password:</label>
+          <input type="password" id="register-password" required />
+        </div>
+        <div class="form-row">
+          <label for="register-confirm-password">Confirm Password:</label>
+          <input type="password" id="register-confirm-password" required />
+        </div>
+        <div class="form-row">
+          <label for="register-role">Role:</label>
+          <select id="register-role" required>
+            <option value="">Select role</option>
+            <option value="doctor">Doctor</option>
+            <option value="receptionist">Receptionist</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <button type="submit">Register</button>
+        </div>
+      </form>
+      <p id="register-error" class="error-message"></p>
+      <p id="register-success" class="success-message"></p>
+
+      <div id="post-login-options" style="display:none; margin-top: 20px; visibility: hidden; height: 0; overflow: hidden;">
+        <h3>Choose your page</h3>
+        <button id="doctor-page-btn">Doctor Page</button>
+        <button id="receptionist-page-btn">Receptionist Page</button>
+        <button id="patient-page-btn">Patient Page</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

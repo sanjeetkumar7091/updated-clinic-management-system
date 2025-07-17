@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Receptionist Dashboard - Clinic Management System</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Receptionist Dashboard</h1>
+    <button id="logout-btn">Logout</button>
+    <section id="patient-entry-section">
+      <h2 style="text-align: center;">New Patient Entry</h2>
+      <form id="patient-entry-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required />
+        <label for="age">Age:</label>
+        <input type="number" id="age" required />
+        <label for="gender">Gender:</label>
+        <select id="gender" required>
+          <option value="">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+        <label for="contact">Contact Info:</label>
+        <input type="text" id="contact" required />
+        <label for="symptoms">Symptoms:</label>
+        <textarea id="symptoms" required></textarea>
+        <label for="assigned-doctor">Assign Doctor:</label>
+        <select id="assigned-doctor" required>
+          <option value="">Select a doctor</option>
+        </select>
+        <button type="submit" style="display: block; margin: 20px auto 0 auto;">Add Patient</button>
+      </form>
+      <p id="entry-message" class="success-message"></p>
+    </section>
+    <section id="token-section" style="margin-top: 30px;">
+      <h2>Generated Token</h2>
+      <p id="token-display">No token generated yet.</p>
+    </section>
+    <section id="billing-section" style="margin-top: 30px;">
+      <h2>Billing</h2>
+      <form id="billing-form">
+        <label for="patient-select">Select Patient:</label>
+        <select id="patient-select" required>
+          <option value="">Select a patient</option>
+        </select>
+        <label for="charges">Charges:</label>
+        <input type="number" id="charges" required min="0" />
+        <button type="submit" style="display: block; margin: 20px auto 0 auto;">Generate Bill</button>
+      </form>
+      <p id="billing-message" class="success-message"></p>
+      <div id="bill-display"></div>
+    </section>
+  </div>
+</body>
+</html>

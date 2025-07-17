@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Patient Dashboard - Clinic Management System</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Patient Dashboard</h1>
+    <button id="logout-btn">Logout</button>
+    <section id="patient-details-section">
+      <h2>Patient Details</h2>
+      <!-- Patient details content can be added here -->
+      <div id="patient-details-list">
+        <!-- Example patient details list or form -->
+        <p>No patient details available yet.</p>
+      </div>
+    </section>
+    <section id="rooms-section">
+      <h2>Rooms</h2>
+      <select id="room-select">
+        <option value="">Select Room</option>
+        <option value="Room 101">Room 101</option>
+        <option value="Room 102">Room 102</option>
+        <option value="Room 103">Room 103</option>
+      </select>
+    </section>
+    <section id="ward-section">
+      <h2>Ward</h2>
+      <select id="ward-select">
+        <option value="">Select Ward</option>
+        <option value="Ward A">Ward A</option>
+        <option value="Ward B">Ward B</option>
+        <option value="Ward C">Ward C</option>
+      </select>
+    </section>
+  </div>
+</body>
+</html>
